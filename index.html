@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  </head>
+  <body>
+    <div class="main">
+      <div id="header">
+        <div id="navbar">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+          <div class="title">
+            <h1>category pages</h1>
+            <h1>site structure</h1>
+          </div>
+          <i class="fa fa-times" aria-hidden="true" onclick="hideDetailPage()"></i>
+        </div>
+        <div class="intro">
+          <p class="button">Tailor statistics</p>
+        </div>
+      </div>
+      <div id="home-page">
+        <div class="card">
+          <h2>home</h2>
+          <div class="card-detail" onclick='flipCard(this)'>
+            <div class="flip-card front flip">
+              front
+            </div>
+            <div class="flip-card back">
+              back
+            </div>
+          </div>
+        </div>
+
+        <div style='width:68%' onclick='showGraph(this)' class="flow">
+          <div style='width:5%' class="diff-status-bar green-bg"></div>
+          <div class="numbers">
+            <div class="percent">
+              68.8%
+            </div>
+            <div class="grow red"><i class="fa fa-caret-up" aria-hidden="true"></i>5% MoM</div>
+          </div>
+        </div>
+
+        <div class="card" onclick="showDetailPage()">
+          <h2>category pages</h2>
+        </div>
+
+        <div style='width:50%' class="flow">
+          <div style='width:14%' class="diff-status-bar red-bg"></div>
+          <div class="numbers">
+            <div class="percent">
+              50.4%
+            </div>
+            <div class="grow red"><i class="fa fa-caret-down" aria-hidden="true"></i>14% MoM</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>detail pages</h2>
+        </div>
+        <div style='width:78%' class="flow">
+          <div style='width:3%' class="diff-status-bar green-bg"></div>
+          <div class="numbers">
+            <div class="percent">
+              78%
+            </div>
+            <div class="grow green"><i class="fa fa-caret-up" aria-hidden="true"></i>3% MoM</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>card</h2>
+        </div>
+
+        <div style='width:36%' class="flow">
+          <div style='width:10%' class="diff-status-bar red-bg"></div>
+          <div class="numbers">
+            <div class="percent">
+              35.7%
+            </div>
+            <div class="grow red"><i class="fa fa-caret-down" aria-hidden="true"></i>10% MoM</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>checkout</h2>
+        </div>
+
+        <div style='width:20%' class="flow">
+          <div style='width:7%' class="diff-status-bar green-bg"></div>
+          <div class="numbers">
+            <div class="percent">
+              20.0%
+            </div>
+            <div class="grow green"><i class="fa fa-caret-up" aria-hidden="true"></i>7% MoM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="https://unpkg.com/vue"></script> -->
+  <script src="https://use.fontawesome.com/1e6722a1c0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+  <script src="./main.js"></script>
+</html>

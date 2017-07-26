@@ -1,0 +1,221 @@
+/*variables*/
+$color-red: #FF6663;
+$color-green: #C5DCA0;
+$color-blue: #6A7D95;
+$color-gray: #767676;
+$color-blue-gray: #CDD3DB;
+$color-light-gray: #B5B5B5;
+$color-white-gray: #F5F5F5;
+$color-white: #FFFFFF;
+
+$font-size-extra-small: 8px;
+$font-size-small: 12px;
+$font-size-medium: 16px;
+$font-size-large: 20px;
+$font-size-extra-large: 28px;
+
+$font-extra-bold: 700;
+$font-bold: 600;
+$font-semi-bold: 500;
+$font-regular: 400;
+
+$padding-small: 8px;
+$padding: 16px;
+$padding-large: 24px;
+$padding-big: 32px;
+
+
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	position: relative;
+	h1,h2,h3,h4,h5,h6,p {
+		margin: 0;
+		font-weight: $font-regular;
+		color: $color-blue;
+		text-transform: uppercase;
+	}
+}
+
+.main {
+	max-width: 640px;
+	margin: 0 auto;
+	border: 1px solid black;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+.green { color: $color-green; }
+.green-bg { background: $color-green; }
+.red { color: $color-red; }
+.red-bg { background: $color-red; }
+
+.button {
+	background: rgba(0,0,0,0.5);
+  border: 1px solid $color-white;
+  border-radius: 1000px;
+  padding: $padding-small $padding-big;
+  font-size: $font-size-small;
+	cursor: pointer;
+}
+
+#header {
+	background-image: url(./src/header-home.jpg);
+	background-size: cover;
+	text-align: center;
+	color: $color-white;
+	h1, p {
+		color: $color-white;
+	}
+	.intro {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 48px 0;
+	}
+}
+
+#navbar {
+	padding: $padding-large;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+	background: rgba(0,0,0,0.5);
+	.title {
+		overflow: hidden;
+		height: 22px;
+	}
+	h1 {
+		-webkit-transform: translateY(-100%);
+		        transform: translateY(-100%);
+		font-size: $font-size-medium;
+		font-weight: $font-bold;
+	}
+	i {
+		font-size: $font-size-large
+	}
+	.fa-times {
+		opacity: 0;
+		cursor: pointer;
+	}
+}
+
+#home-page {
+	.card {
+		padding: $padding-small;
+		border-top: 1px solid $color-blue-gray;
+		border-bottom: 1px solid $color-blue-gray;
+		background: $color-white;
+		overflow: hidden;
+		h2 {
+			text-align: center;
+			text-transform: uppercase;
+			font-size: $font-size-medium;
+			font-weight: $font-bold;
+		}
+	}
+
+	.flow {
+		background: $color-white-gray;
+		padding: $padding 0;
+		position: relative;
+		cursor: pointer;
+	 	box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+		overflow: hidden;
+		.diff-status-bar {
+			height: 100%;
+			position: absolute;
+			top: 0;
+    	right: 0;
+			mix-blend-mode: multiply;
+		}
+		.numbers {
+				overflow: hidden;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+				color: $color-blue;
+				.percent {
+					margin-right: 8px;
+					font-size: $font-size-extra-large;
+				}
+				.grow {
+					margin-top: 5px;
+					font-size: $font-size-small;
+					i {
+						margin-right: 2px;
+					}
+				}
+		}
+	}
+}
+
+.card-detail {
+	/* display: none;*/
+	opacity: 0;
+	position: relative;
+	height: 100%;
+	margin-top: -22px;
+	-webkit-perspective: 100vw;
+	        perspective: 100vw;
+	.front {
+		background: $color-light-gray;
+		-webkit-transform: rotateY(0deg);
+		        transform: rotateY(0deg);
+		-webkit-backface-visibility: none;
+		        backface-visibility: none;
+	}
+	.back {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $color-blue;
+		-webkit-transform: rotateY(-180deg);
+		        transform: rotateY(-180deg);
+		-webkit-backface-visibility: hidden;
+		        backface-visibility: hidden;
+	}
+	.flip-card {
+		transition: -webkit-transform 300ms ease;
+		transition: transform 300ms ease;
+		transition: transform 300ms ease, -webkit-transform 300ms ease;
+		height: 100%;
+		width: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+}
+
+.flipped {
+	.back {
+		-webkit-transform: rotateY(0deg);
+		        transform: rotateY(0deg);
+		-webkit-backface-visibility: none;
+		        backface-visibility: none;
+	}
+	.front {
+		-webkit-transform: rotateY(180deg);
+		        transform: rotateY(180deg);
+		-webkit-backface-visibility: hidden;
+		        backface-visibility: hidden;
+	}
+}
