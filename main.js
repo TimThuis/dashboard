@@ -93,9 +93,9 @@ function showGraph(el) {
     .to('.graph', 1, {
       width: '100%',
     }, 'start+=1')
-    .from('.more', 0.5, {
-      y: '100%'
-    }, 'start+=3')
+    .to('.more', 0.5, {
+      y: '0%'
+    }, 'start+=2')
 
   if (el.classList.contains('open')) {
     el.classList.remove('open');
