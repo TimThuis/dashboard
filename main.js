@@ -10,11 +10,11 @@ const showDetailCardTl = new TimelineMax({
 })
 
 
-showDetailCardTl.to('.card-detail .one', 1, {
+showDetailCardTl.to('.card-test .one', 1, {
   scale: 0.75,
   opacity: 0.75,
 }, 'start')
-  .to('.card-detail .two', 1, {
+  .to('.card-test .two', 1, {
     x: '0%',
   }, 'start+=0.5')
 
@@ -39,6 +39,9 @@ detailPageTl.to('.flow', 1, {
     padding: 0,
     overflow: 'visible'
   }, 0.25, 'start+=1')
+  .to('.card .slide-card', 0.5, {
+    height: '100%',
+  }, 'start+=1')
   .to('.title h1', 0.5, {
     y: 0
   }, 'start')
@@ -47,6 +50,9 @@ detailPageTl.to('.flow', 1, {
   }, 'start')
   .to('.card .card-detail', 0.5, {
     opacity: 1,
+  }, 'start+=1.5')
+  .from('.card .card-detail', 0.25, {
+    scale: 0.9,
   }, 'start+=1.5')
 
 dataFlowsTl.staggerFrom('.card', 0.5, {
@@ -75,12 +81,21 @@ function showGraph(el) {
     .to(statusBar, 0.5, {
       width: '0',
     }, 'start')
+    .to('.numbers', 0.5, {
+      marginTop: '16px',
+    }, 'start+=0.5')
     .to('.graph', 0.5, {
       height: '200px',
+    }, 'start+=0.5')
+    .to('.flow', 0.5, {
+      padding: 0,
     }, 'start+=0.5')
     .to('.graph', 1, {
       width: '100%',
     }, 'start+=1')
+    .from('.more', 0.5, {
+      y: '100%'
+    }, 'start+=3')
 
   if (el.classList.contains('open')) {
     el.classList.remove('open');

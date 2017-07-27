@@ -24,12 +24,14 @@
       <div id="home-page">
         <div class="card">
           <h2>home</h2>
-          <div class="card-detail">
+          <div class="card-detail card-test">
             <div class="slide-card one" onclick='slideCardPlay()'>
-              Card - 1
+              <h4>Bounce rate</h4>
+              <div class="percent">68.8%</div>
+              <div class="grow red"><i class="fa fa-caret-up" aria-hidden="true"></i>5% MoM</div>
             </div>
             <div class="slide-card two"  onclick='slideCardRev()'>
-              Card - 2
+              <img src="./src/graph.png" alt="">
             </div>
           </div>
         </div>
@@ -44,11 +46,21 @@
           </div>
           <div class="graph">
             <img src="./src/graph.png" alt="">
+            <div class="more">
+              read more
+            </div>
           </div>
         </div>
 
         <div class="card" onclick="showDetailPage()">
           <h2>category pages</h2>
+          <div class="card-detail">
+            <div class="slide-card one">
+              <h4>Conversion</h4>
+              <div class="percent">25.7%</div>
+              <div class="grow green"><i class="fa fa-caret-down" aria-hidden="true"></i>7% MoM</div>
+            </div>
+          </div>
         </div>
 
         <div style='width:50%' class="flow">
@@ -63,6 +75,13 @@
 
         <div class="card">
           <h2>detail pages</h2>
+          <div class="card-detail">
+            <div class="slide-card one">
+              <h4>Exit rate</h4>
+              <div class="percent">5.4%</div>
+              <div class="grow green"><i class="fa fa-caret-up" aria-hidden="true"></i>103.4% MoM</div>
+            </div>
+          </div>
         </div>
         <div style='width:78%' class="flow">
           <div style='width:3%' class="diff-status-bar green-bg"></div>
@@ -81,9 +100,7 @@
         <div style='width:36%' class="flow">
           <div style='width:10%' class="diff-status-bar red-bg"></div>
           <div class="numbers">
-            <div class="percent">
-              35.7%
-            </div>
+            <div class="percent">67.4%</div>
             <div class="grow red"><i class="fa fa-caret-down" aria-hidden="true"></i>10% MoM</div>
           </div>
         </div>
@@ -104,7 +121,6 @@
       </div>
     </div>
   </body>
-  <!-- <script src="https://unpkg.com/vue"></script> -->
   <script src="https://use.fontawesome.com/1e6722a1c0.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
   <script src="./main.js"></script>
