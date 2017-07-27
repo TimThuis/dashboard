@@ -5,6 +5,20 @@ const dataFlowChartShowTl = new TimelineMax({
 const detailPageTl = new TimelineMax({
   paused: true,
 })
+const showDetailCardTl = new TimelineMax({
+  paused: true,
+})
+
+
+showDetailCardTl.to('.card-detail .one', 1, {
+  scale: 0.75,
+  opacity: 0.75,
+}, 'start')
+  .to('.card-detail .two', 1, {
+    x: '0%',
+  }, 'start+=0.5')
+
+
 
 detailPageTl.to('.flow', 1, {
   x: '-100%',
@@ -58,12 +72,15 @@ function showGraph(el) {
   dataFlowChartShowTl.to(el, 0.5, {
     width: '100%',
   }, 'start')
-    .to(el, 1, {
-      height: '50vh',
-    }, 'start+=0.5')
     .to(statusBar, 0.5, {
       width: '0',
     }, 'start')
+    .to('.graph', 0.5, {
+      height: '200px',
+    }, 'start+=0.5')
+    .to('.graph', 1, {
+      width: '100%',
+    }, 'start+=1')
 
   if (el.classList.contains('open')) {
     el.classList.remove('open');
@@ -81,7 +98,12 @@ function showDetailPage() {
 function hideDetailPage() {
   detailPageTl.reverse();
 }
-//
-function flipCard(el) {
-  el.classList.contains('flipped') ? el.classList.remove('flipped') : el.classList.add('flipped');
+
+
+function slideCardPlay() {
+  showDetailCardTl.play();
+}
+
+function slideCardRev() {
+  showDetailCardTl.reverse();
 }

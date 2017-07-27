@@ -38,9 +38,9 @@ body {
 }
 
 .main {
-	max-width: 640px;
+	max-width: 375px;
 	margin: 0 auto;
-	border: 1px solid black;
+	border: 1px solid $color-blue-gray;
 	overflow: hidden;
 	min-height: 100vh;
 }
@@ -68,35 +68,24 @@ body {
 		color: $color-white;
 	}
 	.intro {
-		display: -webkit-box;
-		display: -ms-flexbox;
 		display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     padding: 48px 0;
 	}
 }
 
 #navbar {
 	padding: $padding-large;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 	background: rgba(0,0,0,0.5);
 	.title {
 		overflow: hidden;
 		height: 22px;
 	}
 	h1 {
-		-webkit-transform: translateY(-100%);
-		        transform: translateY(-100%);
+    transform: translateY(-100%);
 		font-size: $font-size-medium;
 		font-weight: $font-bold;
 	}
@@ -140,12 +129,8 @@ body {
 		}
 		.numbers {
 				overflow: hidden;
-				display: -webkit-box;
-				display: -ms-flexbox;
 				display: flex;
-				-webkit-box-pack: center;
-				    -ms-flex-pack: center;
-				        justify-content: center;
+        justify-content: center;
 				color: $color-blue;
 				.percent {
 					margin-right: 8px;
@@ -159,63 +144,39 @@ body {
 					}
 				}
 		}
+		.graph {
+			display: flex;
+    	justify-content: center;
+    	height: 100%;
+    	align-items: center;
+			width: 0;
+			overflow: hidden;
+			height: 0;
+			img {
+				width: 100vw;
+			}
+		}
 	}
 }
 
 .card-detail {
-	/* display: none;*/
 	opacity: 0;
 	position: relative;
 	height: 100%;
 	margin-top: -22px;
-	-webkit-perspective: 100vw;
-	        perspective: 100vw;
-	.front {
-		background: $color-light-gray;
-		-webkit-transform: rotateY(0deg);
-		        transform: rotateY(0deg);
-		-webkit-backface-visibility: none;
-		        backface-visibility: none;
-	}
-	.back {
-		position: absolute;
-		top: 0;
-		left: 0;
-		background: $color-blue;
-		-webkit-transform: rotateY(-180deg);
-		        transform: rotateY(-180deg);
-		-webkit-backface-visibility: hidden;
-		        backface-visibility: hidden;
-	}
-	.flip-card {
-		transition: -webkit-transform 300ms ease;
-		transition: transform 300ms ease;
-		transition: transform 300ms ease, -webkit-transform 300ms ease;
+	background: $color-light-gray;
+	.slide-card {
 		height: 100%;
-		width: 100%;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
-		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+		background: $color-white;
 	}
-}
-
-.flipped {
-	.back {
-		-webkit-transform: rotateY(0deg);
-		        transform: rotateY(0deg);
-		-webkit-backface-visibility: none;
-		        backface-visibility: none;
-	}
-	.front {
-		-webkit-transform: rotateY(180deg);
-		        transform: rotateY(180deg);
-		-webkit-backface-visibility: hidden;
-		        backface-visibility: hidden;
+	.two {
+		position: absolute;
+		transform: translateX(100%);
+		top: 0;
+    left: 0;
+    width: 100%;
 	}
 }
