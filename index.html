@@ -12,112 +12,59 @@
         <div id="navbar">
           <i class="fa fa-bars" aria-hidden="true"></i>
           <div class="title">
-            <h1>category pages</h1>
             <h1>site structure</h1>
           </div>
           <i class="fa fa-times" aria-hidden="true" onclick="hideDetailPage()"></i>
         </div>
         <div class="intro">
-          <p class="button">Tailor statistics</p>
+          <p>let's look at the <span>bounce rate</span></p>
         </div>
       </div>
       <div id="home-page">
-        <div class="card">
-          <h2>home</h2>
-          <div class="card-detail card-test">
-            <div class="slide-card one" onclick='slideCardPlay()'>
-              <h4>Bounce rate</h4>
-              <div class="percent">68.8%</div>
-              <div class="grow red"><i class="fa fa-caret-up" aria-hidden="true"></i>5% MoM</div>
-            </div>
-            <div class="slide-card two"  onclick='slideCardRev()'>
-              <img src="./src/graph.png" alt="">
-            </div>
+        <div class="card-main" >
+          <div class="card-title f-purple f-extra-bold">home</div>
+          <div class="card-percent f-big">
+            <img src="./src/icon-bounce.png" alt="icon">
+            68.8<span class="f-small">%<span>
+          </div>
+          <div class="card-sub-title f-small f-gray">
+            Bounce rate
+            <span class="grow-percent f-red"><i class="fa fa-caret-up" aria-hidden="true"></i>5% MoM</span>
+          </div>
+          <div class="card-graph-small">
+            <img src="./src/graph-small.png" alt="graph">
           </div>
         </div>
 
-        <div style='width:68%' onclick='showGraph(this)' class="flow">
-          <div style='width:5%' class="diff-status-bar green-bg"></div>
-          <div class="numbers">
-            <div class="percent">
-              68.8%
-            </div>
-            <div class="grow red"><i class="fa fa-caret-up" aria-hidden="true"></i>5% MoM</div>
+        <div class="card-bar" style='width:68%' onclick='startCardBarDetailShow(this)'>
+          <div class="percent f-big">68.8%</div>
+          <div class="grow f-red f-small"><i class="fa fa-caret-up" aria-hidden="true"></i>5% MoM</div>
+          <div class="card-bar-graph">
+            <img src="./src/graph-big.png" alt="graph">
           </div>
-          <div class="graph">
-            <img src="./src/graph.png" alt="">
-            <div class="more">
-              read more
+          <div class="card-bar-details">
+            <div class="card-bar-small">
+              <img src="./src/icon-bounce.png" alt="">
+              <div class="number f-large f-bold">65$</div>
+              <p class="f-small">adv</p>
+              <span class="grow-percent f-red f-small"><i class="fa fa-caret-down" aria-hidden="true"></i>2% MoM</span>
             </div>
+            <div class="card-bar-small">
+              <img src="./src/icon-bounce.png" alt="">
+              <div class="number f-large f-bold">-12m$</div>
+              <p class="f-small">revenue</p>
+              <span class="grow-percent f-green f-small"><i class="fa fa-caret-up" aria-hidden="true"></i>2.3% MoM</span>
+            </div>
+            <div class="card-bar-small">
+              <img src="./src/icon-bounce.png" alt="">
+              <div class="number f-large f-bold">20.000</div>
+              <p class="f-small">visits</p>
+              <span class="grow-percent f-green f-small"><i class="fa fa-caret-up" aria-hidden="true"></i>1% MoM</span>
+            </div>
+
           </div>
         </div>
 
-        <div class="card" onclick="showDetailPage()">
-          <h2>category pages</h2>
-          <div class="card-detail">
-            <div class="slide-card one">
-              <h4>Conversion</h4>
-              <div class="percent">25.7%</div>
-              <div class="grow green"><i class="fa fa-caret-down" aria-hidden="true"></i>7% MoM</div>
-            </div>
-          </div>
-        </div>
-
-        <div style='width:50%' class="flow">
-          <div style='width:14%' class="diff-status-bar red-bg"></div>
-          <div class="numbers">
-            <div class="percent">
-              50.4%
-            </div>
-            <div class="grow red"><i class="fa fa-caret-down" aria-hidden="true"></i>14% MoM</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>detail pages</h2>
-          <div class="card-detail">
-            <div class="slide-card one">
-              <h4>Exit rate</h4>
-              <div class="percent">5.4%</div>
-              <div class="grow green"><i class="fa fa-caret-up" aria-hidden="true"></i>103.4% MoM</div>
-            </div>
-          </div>
-        </div>
-        <div style='width:78%' class="flow">
-          <div style='width:3%' class="diff-status-bar green-bg"></div>
-          <div class="numbers">
-            <div class="percent">
-              78%
-            </div>
-            <div class="grow green"><i class="fa fa-caret-up" aria-hidden="true"></i>3% MoM</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>card</h2>
-        </div>
-
-        <div style='width:36%' class="flow">
-          <div style='width:10%' class="diff-status-bar red-bg"></div>
-          <div class="numbers">
-            <div class="percent">67.4%</div>
-            <div class="grow red"><i class="fa fa-caret-down" aria-hidden="true"></i>10% MoM</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>checkout</h2>
-        </div>
-
-        <div style='width:20%' class="flow">
-          <div style='width:7%' class="diff-status-bar green-bg"></div>
-          <div class="numbers">
-            <div class="percent">
-              20.0%
-            </div>
-            <div class="grow green"><i class="fa fa-caret-up" aria-hidden="true"></i>7% MoM</div>
-          </div>
-        </div>
       </div>
     </div>
   </body>

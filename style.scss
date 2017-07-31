@@ -1,79 +1,70 @@
 /*variables*/
 $color-red: #FF6663;
 $color-green: #C5DCA0;
-$color-blue: #6A7D95;
-$color-gray: #767676;
-$color-blue-gray: #CDD3DB;
-$color-light-gray: #B5B5B5;
-$color-white-gray: #F5F5F5;
+$color-black: #414141;
+$color-blue-solid: #3C5377;
+$color-blue-trans: #E2EEF5;
+$color-gray: #CDD3DB;
+$color-purple: #4B26A1;
 $color-white: #FFFFFF;
 
-$font-size-extra-small: 8px;
 $font-size-small: 12px;
 $font-size-medium: 16px;
 $font-size-large: 20px;
 $font-size-extra-large: 28px;
-$font-size-mega: 36px;
 
 $font-extra-bold: 700;
 $font-bold: 600;
 $font-semi-bold: 500;
 $font-regular: 400;
+$font-thin: 300;
 
 $padding-small: 8px;
 $padding: 16px;
 $padding-large: 24px;
 $padding-big: 32px;
 
+.f-green { color: $color-green; }
+.f-red { color: $color-red; }
+.f-purple { color: $color-purple; }
+.f-gray { color: $color-gray; }
+.f-blue { color: $color-blue-solid; }
+
+.f-big { font-size: $font-size-extra-large; }
+.f-large { font-size: $font-size-large; }
+.f-small { font-size: $font-size-small; }
+
+.f-extra-bold { font-weight: $font-extra-bold; }
+.f-bold { font-weight: $font-bold; }
+.f-semi-bold { font-weight: $font-semi-bold; }
+.f-thin { font-weight: $font-thin; }
 
 body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	position: relative;
-	h1,h2,h3,h4,h5,h6,p {
+	h1,h2,h3,h4,h5,h6,p, div {
 		margin: 0;
-		font-weight: $font-regular;
-		color: $color-blue;
+		padding: 0;
+		color: $color-blue-solid;
 		text-transform: uppercase;
+		font-size: $font-size-medium;
+		font-weight: $font-regular;
 	}
 }
 
 .main {
 	max-width: 375px;
 	margin: 0 auto;
-	border: 1px solid $color-blue-gray;
+	border: 1px solid $color-gray;
 	overflow: hidden;
 	min-height: 100vh;
 }
 
-.green { color: $color-green; }
-.green-bg { background: $color-green; }
-.red { color: $color-red; }
-.red-bg { background: $color-red; }
-
-.button {
-	background: rgba(0,0,0,0.25);
-  border: 1px solid $color-white;
-  border-radius: 1000px;
-  padding: $padding-small $padding-big;
-  font-size: $font-size-small;
-	cursor: pointer;
-}
-
-#header {
-	// background-image: url(./src/header-home.jpg);
-	background-color: $color-blue;
-	background-size: cover;
-	text-align: center;
-	color: $color-white;
-	h1, p {
-		color: $color-white;
-	}
-	.intro {
-		display: flex;
-    justify-content: center;
-    padding: 48px 0;
-	}
+.intro {
+	display: flex;
+  justify-content: center;
+  padding: 16px 0;
 }
 
 #navbar {
@@ -81,13 +72,10 @@ body {
 	display: flex;
   justify-content: space-between;
   align-items: center;
-	background: rgba(0,0,0,0.75);
-	.title {
-		overflow: hidden;
-		height: 22px;
-	}
+	background: url(./src/background-header.jpg);
+	background-size: cover;
+	box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
 	h1 {
-    transform: translateY(-100%);
 		font-size: $font-size-medium;
 		font-weight: $font-bold;
 	}
@@ -101,123 +89,175 @@ body {
 }
 
 #home-page {
-	.card {
-		padding: $padding-small;
-		border-top: 1px solid $color-blue-gray;
-		border-bottom: 1px solid $color-blue-gray;
-		background: $color-white;
-		overflow: hidden;
-		h2 {
-			text-align: center;
-			text-transform: uppercase;
-			font-size: $font-size-medium;
-			font-weight: $font-bold;
-		}
-	}
-
-	.flow {
-		background: $color-white-gray;
-		padding: 16px 0;
-		position: relative;
-		cursor: pointer;
-	 	box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
-		overflow: hidden;
-		.diff-status-bar {
-			height: 100%;
-			position: absolute;
-			top: 0;
-    	right: 0;
-			mix-blend-mode: multiply;
-		}
-		.numbers {
-				overflow: hidden;
-				display: flex;
-        justify-content: center;
-				color: $color-blue;
-				.percent {
-					margin-right: 8px;
-					font-size: $font-size-extra-large;
-				}
-				.grow {
-					margin-top: 5px;
-					font-size: $font-size-small;
-					i {
-						margin-right: 2px;
-					}
-				}
-		}
-		.graph {
-			display: flex;
-    	justify-content: center;
-    	height: 100%;
-    	align-items: center;
-			width: 0;
-			overflow: hidden;
-			height: 0;
-			position: relative;
-			img {
-				width: 100vw;
-		    margin-bottom: 32px;
+	padding: 0 $padding;
+	.card-main {
+		background: white;
+    border: 1px solid $color-gray;
+    padding: $padding-big 64px;
+		.card-percent {
+			margin-left: -26px;
+			span, img{
+				vertical-align: super;
 			}
-			.more {
-				padding: 12px 0;
-				color: $color-white;
-				position: absolute;
-				background: rgba(0,0,0,0.3);
-				transform: translateY(100%);
-				text-align: center;
-				width: 100%;
-				left: 0;
-				bottom: 0;
-				font-weight: $font-regular;
-				text-transform: uppercase;
-				font-size: $font-size-small;
+			span {
+				padding-left: 4px;
 			}
 		}
-	}
-}
-
-.card-detail {
-	opacity: 0;
-	position: relative;
-	height: 100%;
-	margin-top: -22px;
-	background: $color-light-gray;
-	.slide-card {
-		height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-		background: $color-white;
-		overflow: hidden;
-		height: 22px;
-		img {
-			width: 75%;
+		.grow-percent {
+			float: right;
 		}
+		.card-graph-small {
+			padding-top: $padding;
+		};
 	}
-	.one {
+	.card-bar {
+		background: $color-blue-trans;
+		margin: 0 auto;
 		display: flex;
     flex-direction: column;
-		h4 {
-			color: $color-light-gray;
+    align-items: center;
+		padding: $padding-large 0;
+		.card-bar-graph {
+			overflow: hidden;
 		}
-		.percent {
-			color: $color-blue;
-			font-size: 42px;
-			font-weight: $font-extra-bold;
+		.card-bar-graph img{
+			padding: $padding 0;
 		}
-		.grow {
-			display: inline;
-			i {
-				padding-right: 4px;
+		.card-bar-details {
+			display: flex;
+			border-top: 1px solid $color-gray;
+			width: 100%;
+	    justify-content: space-around;
+			padding-top: $padding-large;
+			overflow: hidden;
+			& > * {
+				display: flex;
+    		flex-direction: column;
+    		align-items: center;
+			}
+			.card-bar-small > * {
+				padding: 2px 0;
 			}
 		}
 	}
-	.two {
-		position: absolute;
-		transform: translateX(100%);
-		top: 0;
-    left: 0;
-    width: 100%;
-	}
 }
+	// 	.card {
+	// 		padding: $padding-small;
+	// 		border-top: 1px solid $color-blue-gray;
+	// 		border-bottom: 1px solid $color-blue-gray;
+	// 		background: $color-white;
+	// 		overflow: hidden;
+	// 		h2 {
+	// 			text-align: center;
+	// 			text-transform: uppercase;
+	// 			font-size: $font-size-medium;
+	// 			font-weight: $font-bold;
+	// 		}
+	// 	}
+	//
+	// 	.flow {
+	// 		background: $color-white-gray;
+	// 		padding: 16px 0;
+	// 		position: relative;
+	// 		cursor: pointer;
+	// 	 	box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+	// 		overflow: hidden;
+	// 		.diff-status-bar {
+	// 			height: 100%;
+	// 			position: absolute;
+	// 			top: 0;
+	//     	right: 0;
+	// 			mix-blend-mode: multiply;
+	// 		}
+	// 		.numbers {
+	// 				overflow: hidden;
+	// 				display: flex;
+	//         justify-content: center;
+	// 				color: $color-blue;
+	// 				.percent {
+	// 					margin-right: 8px;
+	// 					font-size: $font-size-extra-large;
+	// 				}
+	// 				.grow {
+	// 					margin-top: 5px;
+	// 					font-size: $font-size-small;
+	// 					i {
+	// 						margin-right: 2px;
+	// 					}
+	// 				}
+	// 		}
+	// 		.graph {
+	// 			display: flex;
+	//     	justify-content: center;
+	//     	height: 100%;
+	//     	align-items: center;
+	// 			width: 0;
+	// 			overflow: hidden;
+	// 			height: 0;
+	// 			position: relative;
+	// 			img {
+	// 				width: 100vw;
+	// 		    margin-bottom: 32px;
+	// 			}
+	// 			.more {
+	// 				padding: 12px 0;
+	// 				color: $color-white;
+	// 				position: absolute;
+	// 				background: rgba(0,0,0,0.3);
+	// 				transform: translateY(100%);
+	// 				text-align: center;
+	// 				width: 100%;
+	// 				left: 0;
+	// 				bottom: 0;
+	// 				font-weight: $font-regular;
+	// 				text-transform: uppercase;
+	// 				font-size: $font-size-small;
+	// 			}
+	// 		}
+	// 	}
+	// }
+	//
+	// .card-detail {
+	// 	opacity: 0;
+	// 	position: relative;
+	// 	height: 100%;
+	// 	margin-top: -22px;
+	// 	background: $color-light-gray;
+	// 	.slide-card {
+	// 		height: 100%;
+	//     display: flex;
+	//     justify-content: center;
+	//     align-items: center;
+	// 		background: $color-white;
+	// 		overflow: hidden;
+	// 		height: 22px;
+	// 		img {
+	// 			width: 75%;
+	// 		}
+	// 	}
+	// 	.one {
+	// 		display: flex;
+	//     flex-direction: column;
+	// 		h4 {
+	// 			color: $color-light-gray;
+	// 		}
+	// 		.percent {
+	// 			color: $color-blue;
+	// 			font-size: 42px;
+	// 			font-weight: $font-extra-bold;
+	// 		}
+	// 		.grow {
+	// 			display: inline;
+	// 			i {
+	// 				padding-right: 4px;
+	// 			}
+	// 		}
+	// 	}
+	// 	.two {
+	// 		position: absolute;
+	// 		transform: translateX(100%);
+	// 		top: 0;
+	//     left: 0;
+	//     width: 100%;
+	// 	}
+	// }
